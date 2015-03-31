@@ -5,6 +5,8 @@
     'ui.router',
     'ngDialog',
     'ang-drag-drop',
-    'chromeStorage'
+    'chromeStorage',
+    'ui.bootstrap',
+    'frapontillo.bootstrap-switch'
   ]);
 })();

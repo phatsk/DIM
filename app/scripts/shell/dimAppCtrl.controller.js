@@ -3,9 +3,9 @@
 
   angular.module('dimApp').controller('dimAppCtrl', DimApp);
 
-  DimApp.$inject = [];
+  DimApp.$inject = ['$scope'];
 
-  function DimApp() {
-
+  function DimApp($scope) {
+    $scope.apple = null;
   }
 })();

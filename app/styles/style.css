@@ -1,0 +1,82 @@
+/*.navbar-brand.xbox, .navbar-brand.ps {
+  margin-right: 10px;
+  padding-right: 40px;
+}
+.navbar-brand.xbox {
+  background-image: url('/images/xbox.png');
+  background-size: 24px;
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+.navbar-left {
+  float: left;
+  margin-left: 15px;
+}
+.navbar-right {
+  float: right;
+  margin-right: 15px;
+}
+.btn .icon-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  border-radius: 1px;
+  background-color: white;
+}
+.btn .icon-bar + .icon-bar {
+  margin-top: 4px;
+}
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+button, a {
+  outline: none;
+}
+.btn.toggle {
+  margin-top: 3px;
+  margin-bottom: 4px;
+}
+.navbar-header a {
+  color: white;
+}
+.navbar-header a:focus,
+.navbar-header a:hover {
+    color: #00bc8c;
+}
+.navbar-header, .navbar-header .btn {
+  padding-left: 7.5px;
+  padding-right: 7.5px;
+}
+.nav.navbar-nav {
+  margin: 0 -15px 10px;
+}*/
+
+.navbar-brand span {
+  font-size: 75%;
+  color: #ccc;
+}
+
+.navbar-header .btn {
+  margin-top: 8px;
+  padding-left: 7.5px;
+  padding-right: 7.5px;
+  text-transform: uppercase;
+}
+
+span.bootstrap-switch-label {
+  width: 5px !important;
+  padding: 6px 0 !important;
+  border-radius: 0 !important;
+  margin: 0 !important;
+}
+
+.bootstrap-switch-wrapper {
+  width: 58px !important;
+}
+
+.bootstrap-switch-container span {
+  padding-top: 3px !important;
+  padding-bottom: 3px !important;
+}

@@ -14,13 +14,85 @@
   <!-- Place favicon.ico in the root directory -->
 
   <!--<link rel="stylesheet" href="vendor/ngdialog/css/ngDialog.css">-->
-  <link rel="stylesheet" href="styles/normalize.css">
-  <link rel="stylesheet" href="styles/main.css">
+  <!-- <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/main.css"> -->
+  <link rel="stylesheet" href="styles/flatly.bootstrap.min.css">
+  <link rel="stylesheet" href="vendor/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.min.css">
+  <link rel="stylesheet" href="styles/style.css">
 </head>
 
-<body ng-app="dimApp" ng-strict-di>
-  <div ng-controller="dimAppCtrl">
-    <div id="header">
+<body ng-app="dimApp" ng-strict-di ng-controller="dimAppCtrl">
+  <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="true" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="#" class="btn">Items</a>
+          <a href="#" class="btn">Loadouts</a>
+          <a href="#" class="btn">Filter</a>
+          <!-- <ul class="">
+            <li class="active"><a href="#">Items</a></li>
+            <li><a href="#">Loadouts</a></li>
+            <li><a href="#about">Filter</a></li>
+          </ul> -->
+          <a class="navbar-brand visible-sm-inline-block visible-md-inline-block visible-lg-inline-block" href="#">Destiny Item Manager <span>v3.0</span></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse" aria-expanded="true">
+          <ul class="nav navbar-nav navbar-right">
+            <li style="padding-top: 16px; padding-bottom: 16px;"><input name="myapple"
+    bs-switch ng-model="apple" type="checkbox"
+    switch-on-text="XBL"
+    switch-off-text="PSN"
+    ng-true-value="'yep'"
+    ng-false-value="'nope'"></li>
+            <li>
+              <button type="button" class="navbar-toggle" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Sunburned_Goose</a></li>
+                <li class="divider"></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+  <!-- <nav class="navbar navbar-default navbar-static-top" style="min-height: 43px; margin-bottom: 0;">
+    <div class="container">
+      <div class="navbar-header">
+        <a href="#" class="btn pull-left">Loadouts</a>
+        <a href="#" class="btn pull-left">Filter</a>
+        <a href="#" class="btn toggle collapsed pull-right" data-toggle="collapse" data-target="#menu">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <a href="#" class="btn ellipsis pull-right">TTL Goose</a>
+      </div>
+      <div id="menu" class="navbar-collapse collapse" style="-webkit-box-shadow:none; box-shadow:none;">
+        <ul class="nav navbar-nav">
+          <li><a href="#">Sunburned_Goose</a></li>
+          <li class="divider"></li>
+          <li><a href="#">Settings</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Help</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav> -->
+
+    <!-- <div id="header">
       <div class="content">
         <span>DIM</span>
         <span id="faq-button">?</span>
@@ -32,10 +104,15 @@
     </div>
 
     <div id="content" ui-view></div>
-  </div>
+  </div> -->
 
   <!-- begin vendor scripts -->
-  <script src="vendor/angularjs/angular.min.js"></script>
+  <script src="vendor/jquery/dist/jquery.min.js"></script>
+  <script src="vendor/angular/angular.min.js"></script>
+  <script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="vendor/bootstrap-switch/dist/js/bootstrap-switch.js"></script>
+  <script src="vendor/angular-bootstrap-switch/dist/angular-bootstrap-switch.js"></script>
+  <script src="vendor/angular-bootstrap/ui-bootstrap.min.js"></script>
   <script src="vendor/angular-ui-router/release/angular-ui-router.min.js"></script>
   <script src="vendor/angular-native-dragdrop/draganddrop.js"></script>
   <script src="vendor/ngDialog/js/ngDialog.min.js"></script>
@@ -67,9 +144,6 @@
   <script src="scripts/store/dimStoreHeading.directive.js"></script>
   <script src="scripts/move-popup/dimMovePopup.directive.js"></script>
   <script src="scripts/move-popup/dimMoveItemProperties.directive.js"></script>
-  <!--
-  <script src="scripts/services/platform.factory.js"></script>
-  <script src="scripts/services/item.factory.js"></script>>-->
   <!-- end app scripts -->
 </body>
 
