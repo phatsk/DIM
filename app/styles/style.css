@@ -65,6 +65,10 @@ button, a {
   text-transform: uppercase;
 }
 
+.bootstrap-switch {
+  height: 26px !important;
+}
+
 span.bootstrap-switch-label {
   width: 5px !important;
   padding: 6px 0 !important;
