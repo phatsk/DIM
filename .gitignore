@@ -1,3 +1,4 @@
 app/vendor/
 dist/
 .exrc
+node_modules/

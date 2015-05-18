@@ -73,24 +73,25 @@
         style.innerHTML = query + ' { min-height: ' + (height) + 'px; }';
       };
 
-      setHeight('.guardian .sub-section.sort-class');
-      setHeight('.guardian .sub-section.sort-primary');
-      setHeight('.guardian .sub-section.sort-special');
-      setHeight('.guardian .sub-section.sort-heavy');
-      setHeight('.guardian .sub-section.sort-helmet');
-      setHeight('.guardian .sub-section.sort-chest');
-      setHeight('.guardian .sub-section.sort-gauntlets');
-      setHeight('.guardian .sub-section.sort-leg');
-      setHeight('.guardian .sub-section.sort-classitem');
-      setHeight('.guardian .sub-section.sort-emblem');
-      setHeight('.guardian .sub-section.sort-armor');
-      setHeight('.guardian .sub-section.sort-ghost');
-      setHeight('.guardian .sub-section.sort-ship');
-      setHeight('.guardian .sub-section.sort-vehicle');
-      setHeight('.guardian .sub-section.sort-consumable');
-      setHeight('.guardian .sub-section.sort-material');
-      setHeight('.guardian .weapons');
-      setHeight('.guardian .armor');
+      setHeight('.sub-section.sort-class');
+      setHeight('.sub-section.sort-primary');
+      setHeight('.sub-section.sort-special');
+      setHeight('.sub-section.sort-heavy');
+      setHeight('.sub-section.sort-helmet');
+      setHeight('.sub-section.sort-chest');
+      setHeight('.sub-section.sort-gauntlets');
+      setHeight('.sub-section.sort-leg');
+      setHeight('.sub-section.sort-classitem');
+      setHeight('.sub-section.sort-emblem');
+      setHeight('.sub-section.sort-armor');
+      setHeight('.sub-section.sort-ghost');
+      setHeight('.sub-section.sort-ship');
+      setHeight('.sub-section.sort-vehicle');
+      setHeight('.sub-section.sort-consumable');
+      setHeight('.sub-section.sort-material');
+      setHeight('.weapons');
+      setHeight('.armor');
+      setHeight('.general');
     }
 
     function getStores(getFromBungie) {
@@ -283,15 +284,103 @@
 
         var itemSort = sortItem(itemDef.itemTypeName);
 
-        if (itemDef.itemTypeName === 'ClassItem')
-          debugger;
-
         if (item.location === 4) {
           itemSort = 'Postmaster';
-          itemType = 'Postmaster';
+
+          if (itemType !== 'Messages')
+            itemType = 'Lost Items';
         }
 
-        var dmgName = ['kinetic', , 'arc', 'solar', 'void'][item.damageType];
+        var how = [27147831,
+          42955693,
+          67667123,
+          90237898,
+          218050499,
+          265815054,
+          335523232,
+          339830484,
+          393928834,
+          396000457,
+          458051526,
+          503662095,
+          523254923,
+          539209176,
+          561917151,
+          624069029,
+          714364949,
+          775290250,
+          795669148,
+          860021733,
+          882909349,
+          995864459,
+          904421510,
+          1066225282,
+          1089438744,
+          1107880514,
+          1160431986,
+          1220059831,
+          1254374620,
+          1254481871,
+          1264686852,
+          1323306343,
+          1402638106,
+          1451036562,
+          1519653029,
+          1550472824,
+          1594939317,
+          1656716862,
+          1828077147,
+          1847790745,
+          1873618131,
+          2012670844,
+          2026407600,
+          2083636246,
+          2166567782,
+          2204090140,
+          2205157361,
+          2218769485,
+          2225640336,
+          2254085097,
+          2291003580,
+          2328256155,
+          2438950138,
+          2465557612,
+          2475938409,
+          2480655802,
+          2535110885,
+          2557913516,
+          2558819340,
+          2582896251,
+          2591286232,
+          2642620856,
+          2668404053,
+          2729377859,
+          2733667410,
+          2741119693,
+          2762611443,
+          2773297359,
+          2834869470,
+          2858888526,
+          3072387149,
+          3013056390,
+          3083393861,
+          3102889189,
+          3170350942,
+          3252749793,
+          3604975945,
+          3698237992,
+          3744470365,
+          3904617893,
+          3975149217,
+          3992691386,
+          4029879832,
+          4068960035,
+          4143281036,
+          4160874107,
+          4248486431
+        ];
+
+        var dmgName = [null, 'kinetic', 'arc', 'solar', 'void'][item.damageType];
 
         var createdItem = {
           index: getNextIndex(),
@@ -302,6 +391,7 @@
           tier: itemDef.tierTypeName,
           name: itemDef.itemName,
           icon: itemDef.icon,
+          inHoW: _.contains(how, itemDef.itemHash),
           notransfer: (itemSort !== 'Postmaster') ? itemDef.nonTransferrable : true,
           id: item.itemInstanceId,
           equipped: item.isEquipped,
@@ -414,6 +504,11 @@
           return '';
         return 'Material';
       }
+
+      if (["Public Event Completed"].indexOf(name) != -1) {
+        return "Messages";
+      }
+
       if (["Armor Shader", "Emblem", "Ghost Shell", "Ship", "Vehicle", "Consumable", "Material"].indexOf(type) != -1)
         return type.split(' ')[0];
 
